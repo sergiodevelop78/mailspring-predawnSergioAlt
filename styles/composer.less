@@ -1,0 +1,45 @@
+@import "ui-variables";
+
+// Composer
+.composer-inner-wrap {
+    .composer-header {
+        .composer-header-actions .action {
+            &:hover {
+                color: @accent-primary;
+                img.content-mask {
+                    background-color: @accent-primary;
+                }
+            }
+        }
+
+        ::after {
+            border-bottom: 1px solid @border-header-divider;
+        }
+    }
+    .RichEditor-toolbar {
+        .floating-container {
+            border-bottom: 1px solid @border-header-divider;
+        }
+        // invert color palet
+        .color-picker {
+            filter: invert(100%) hue-rotate(180deg);
+        }
+    }
+}
+
+.RichEditor-root .template-variable {
+    color: @accent-primary-prefilter;
+    border: 1px solid @accent-primary-prefilter;
+    background-color: transparent;
+    &.selected {
+        color: @text-color-prefilter;
+        background-color: @accent-primary-prefilter;
+        border-color: @accent-primary-prefilter;
+    }
+} 
+
+.composer-footer-region .template-status-bar {
+    background-color: @accent-primary;// transparent;
+    color: @text-color;
+    border-color: @accent-primary;
+}

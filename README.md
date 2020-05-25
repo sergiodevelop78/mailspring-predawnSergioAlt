@@ -1,26 +1,13 @@
-# N1 Predawn UI theme
-### A dark-ui theme for the [Nylas N1](https://www.nylas.com/n1) email client.
+# Mailspring Predawn UI theme
 
-### Extensively based on the excellent Sublime/Atom dark-ui theme [Predawn](https://github.com/jamiewilson/predawn) by [Jamie Wilson](https://github.com/jamiewilson).
+A dark UI theme for the [Mailspring](https://getmailspring.com/) email client. This theme is a fork of the [Nylas N1 Predawn theme](https://github.com/adambmedia/N1-Predawn) by [Adam Boulanger](https://github.com/adambmedia) and is extensively based on the [Sublime/Atom Predawn theme](https://github.com/jamiewilson/predawn) by [Jamie Wilson](https://github.com/jamiewilson).
 
-![Screenshot](N1-Predawn-Screen.png?raw=true)
+![Screenshot](ui-predawn-screen.png)
 
 # Installing
-1. Download the [Nylas N1](https://www.nylas.com/n1) email client.
-2. [Grab](https://github.com/adambmedia/N1-Predawn/releases) the latest release of N1-Predawn
-3. Open `N1>Preferences>General>Select theme` and select `Install new theme...` from the dropdown.
-  * You want to install the theme from the package (first option) and not the source (second and third options). As of this release, N1 looks at the folder name to set up the directory. Github's `source-code` links add the version number to the folder name and will break the absolute icon references.
-4. Impress your friends with your snazzy dark-ui email client.
 
-# Folder Hierarchy
-This theme overrides classes found in N1's `internal_packages` directory, `static` directory, and the more typical `ui-variables.less` file.  The folder hierarchy is set up to roughly point to where the original classes can be found to aid the developer to further extend the theme.
-
-# Todo
-1. fix cursor to get rid of white outline as [here](https://discuss.atom.io/t/mouse-cursor-of-editing-status-in-dark-theme/10694)
-2. consider lighter color for email display to gel with incoming richtext on many many emails
-3. consider relevance of soda or monokai theme elements or whether, without code, they are unneccesary
-4. figure out something more elegant for inverse thread-list icons and all the white, gray hover stuff
-5. figure out something more elegant for mulit-select in thread-list
-6. messed up scrollbar in email composition templates popup
-7. horizontal scrollbars
-8. fix Cut-and-paste which grabs html and therefore gets pasted in white-ui applications as a gray-color background with white text.
+1. Download the [Mailspring](https://getmailspring.com/) email client.
+2. Download or clone the latest version of the Predawn UI theme from <https://github.com/asparc/ui-predawn>.
+3. Make sure that the name of the folder containing the Predawn UI theme is `ui-predawn`, as otherwise Mailspring won't recognize it.
+3. Open `Mailspring > Edit > Preferences > Install theme...` and select the folder you just downloaded.
+4. Enjoy a dark theme that's easy on your eyes.
