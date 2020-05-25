@@ -25,23 +25,15 @@
 // background. At the same time, emails with a custom design
 // are kept intact.
 // The broadly valid assumption is made here that in html table
-// emails the table is not nested deeper than 3 levels below the 
+// emails the table is not nested deeper than 4 levels below the 
 // inbox-html-wrapper.
-// .ignore-in-parent-frame {
-    #inbox-html-wrapper, .RichEditor-root .RichEditor-content {
-
-        // Force a transparent background for emails that 
-        // are not based on html tables.
-        > :not(table), 
-        > :not(table) > :not(table),
-        > :not(table) > :not(table) > :not(table),
-        > :not(table) > :not(table) > :not(table) > :not(table) { 
-            background-color: transparent !important; 
-        }
-
+.ignore-in-parent-frame {
+    #inbox-html-wrapper, #inbox-plain-wrapper {
         // Invert the color of everything in the message.
-        color: @text-color-prefilter;
-        background-color: transparent !important;
+        color: @text-color-prefilter !important;
+        blockquote {
+            border-color: @text-color-prefilter;
+        }
         filter: @message-filter;
 
         // Undo the color inversion for html tables, while 
@@ -53,11 +45,11 @@
         > :not(table) > :not(table) > :not(table) > table {
             padding: 10px;
             color: black;
-            background: white;
-            filter: @message-filter-undo;
+            background: white !important;
             a, a:hover, a:active {
                 color: unset;
-            } 
+            }
+            filter: @message-filter-undo;
         }
 
         // Undo the color inversion for all images that are not
@@ -69,8 +61,18 @@
         > :not(table) > :not(table) > :not(table) > :not(table) img { 
             filter: @message-filter-undo;
         }
+
+        // Force a transparent background for emails that 
+        // are not based on html tables.
+        > :not(table), 
+        > :not(table) > :not(table),
+        > :not(table) > :not(table) > :not(table),
+        > :not(table) > :not(table) > :not(table) > :not(table) { 
+            background: transparent !important; // e.g. sidebars emails Stack Overflow 
+        }
     }
-// }
+}
+// see also composer.less!
 
 // The print version of the message requires the message
 // content to be black. The below selects the content that

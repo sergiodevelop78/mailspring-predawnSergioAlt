@@ -43,3 +43,42 @@
     color: @text-color;
     border-color: @accent-primary;
 }
+
+// for color of templates and hyperlinks
+// apply style rules similar to email-frame.less
+.RichEditor-root .RichEditor-content {
+    // Invert the color of everything in the message.
+    color: @text-color-prefilter;
+    blockquote {
+        border-color: @text-color-prefilter;
+    }
+    filter: @message-filter;
+
+    blockquote div.uneditable.custom-block > div {
+        // Undo the color inversion for html tables, while 
+        // adding/restoring color elements for emails that 
+        // implicitly assume a white background.
+        > table,
+        > :not(table) > table,
+        > :not(table) > :not(table) > table,
+        > :not(table) > :not(table) > :not(table) > table {
+            padding: 10px;
+            color: black;
+            background: white !important;
+            a, a:hover, a:active {
+                color: unset;
+            } 
+            filter: @message-filter-undo;
+        }
+
+        // Undo the color inversion for all images that are not
+        // part of html tables.
+        > img, 
+        > :not(table) > img,
+        > :not(table) > :not(table) > img,
+        > :not(table) > :not(table) > :not(table) > img,
+        > :not(table) > :not(table) > :not(table) > :not(table) img { 
+            filter: @message-filter-undo;
+        }
+    }
+}
