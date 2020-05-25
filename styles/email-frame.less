@@ -4,31 +4,33 @@
 // html iframe elements within the mailspring message list.
 // There are three requirements for doing so:
 // 1) The name of this file must be 'email-frame.less'.
-// 2) Style properties have to be placed inside a 
-//   '.ignore-in-parent-frame' parent selector.
-// 3) There cannot be an 'index.less' (which would otherwise
+// 2) There cannot be an 'index.less' (which would otherwise
 //    organizes the import order of the .less files).
-// The above requirements are a bit odd, but they are
+// 3) Style properties have to be placed inside a 
+//   '.ignore-in-parent-frame' parent selector.
+// The third requirement is actually more a best practice,
+// than a hard requirement.
+// These three requirements are a bit odd, but they are
 // an unavoidable consequence of the current implementation 
-// of mailspring.
-//
-// Update: the '.ignore-in-parent-frame' requirement 
-// seems to have become obsolete and can be discarded.
+// of Mailspring. 
 
 @import 'ui-variables';
 
 // Display messages as dark as possible, without 
 // sacrificing their design or readibility.
-// To this end, invert the colors of everyting that is not
-// inside an html table. This makes content that was originally
+// To this end, invert the colors of everyting that is not an image
+// or inside an html table. This makes content that was originally
 // meant to be read on a white background readible on a dark 
-// background. At the same time, emails with a custom design
+// background. At the same time, emails with a custom HTML formatting
 // are kept intact.
 // The broadly valid assumption is made here that in html table
 // emails the table is not nested deeper than 4 levels below the 
-// inbox-html-wrapper.
+// inbox-html-wrapper. The only case I found so far where this 
+// assumption is violated, is when tables become deeply nested
+// because of blockquotes in repleated forwards/replies.
 .ignore-in-parent-frame {
     #inbox-html-wrapper, #inbox-plain-wrapper {
+        
         // Invert the color of everything in the message.
         color: @text-color-prefilter !important;
         blockquote {
@@ -68,7 +70,7 @@
         > :not(table) > :not(table),
         > :not(table) > :not(table) > :not(table),
         > :not(table) > :not(table) > :not(table) > :not(table) { 
-            background: transparent !important; // e.g. sidebars emails Stack Overflow 
+            background: transparent !important; // e.g. sidebars in Stack Overflow emails 
         }
     }
 }
