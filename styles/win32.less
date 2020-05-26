@@ -1,0 +1,63 @@
+@import 'ui-variables';
+
+body.platform-win32 {
+
+    .btn {
+        box-shadow: none;
+        background: @btn-default-bg-color;
+    }
+
+    .find-in-thread .btn:hover {
+        background: transparent;
+    }
+
+    input {
+        box-shadow: none !important;
+        border: 1px solid @input-border-color !important;
+        &:focus {
+            border: 1px solid @accent-primary !important;
+        }
+    }
+
+    .composer-header input {
+        border: none !important;
+    }
+
+    .contact-search input {
+        border: none !important;
+        &:focus {
+            border: 1px solid @accent-primary !important;
+        }
+    }
+
+    a.quoted-text-control,
+    a.quoted-text-control:hover {
+        box-shadow: none;
+        border: 1px solid @input-border-color !important;
+    }
+
+    // Reply/Forward button
+    .button-dropdown:hover .primary-item,
+    .button-dropdown.bordered .only-item,
+    .button-dropdown:hover .only-item,
+    .button-dropdown.bordered .primary-item,
+    .button-dropdown .secondary-picker {
+        color: @text-color-inverse;
+        background-color: @btn-default-bg-color;
+        box-shadow: none;
+        left: 0px;
+    }
+
+    // Send button
+    .button-dropdown.btn-emphasis .only-item, 
+    .button-dropdown.btn-emphasis .primary-item,
+    .button-dropdown.btn-emphasis .secondary-picker {
+        color: @btn-emphasis-text-color;
+        background: @btn-emphasis-bg-color;
+        &, &:hover {
+            box-shadow: none;
+        }
+    }
+}
+
+
