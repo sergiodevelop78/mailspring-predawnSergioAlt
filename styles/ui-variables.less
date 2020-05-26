@@ -13,8 +13,8 @@
 @message-filter-undo:  hue-rotate(-180deg) invert(85%); // white will be a bit fainter
 
 @text-base-prefilter:  spin(#fff - @text-color, 180);
-// @orange-prefilter:  spin(#fff - @orange, 180); //
 @orange-prefilter:     #c25331; // set manually, as hue-rotate is only an approximation of spin
+// @orange-prefilter:  spin(#fff - @orange, 180); // set automatically, but suboptimally
 
 // State colors
 @info-color:        #5293d8;
