@@ -15,6 +15,31 @@
         ::after {
             border-bottom: 1px solid @border-header-divider;
         }
+
+        // sender selector
+        .button-dropdown .only-item,
+        {
+            background: @btn-default-bg-color;
+            box-shadow: none;
+        }
+    
+        // recipient tokens
+        .tokenizing-field .token {
+            background: @btn-default-bg-color;
+            box-shadow: none;
+
+            &.selected, 
+            &.dragging {
+                background: @accent-primary;
+                border-color: @border-color;
+            }
+
+            &.invalid.selected, 
+            &.invalid.dragging {
+                background: @background-color-error;
+                border-color: @border-color;
+            }
+        }
     }
     .RichEditor-toolbar {
         .floating-container {
