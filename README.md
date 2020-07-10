@@ -2,7 +2,10 @@
 
 A dark UI theme for the [Mailspring](https://getmailspring.com/) email client. This theme is a fork of the [Nylas N1 Predawn UI theme](https://github.com/adambmedia/N1-Predawn) by [Adam Boulanger](https://github.com/adambmedia) and is extensively based on the [Sublime/Atom Predawn UI theme](https://github.com/jamiewilson/predawn) by [Jamie Wilson](https://github.com/jamiewilson).
 
-![Screenshot](ui-predawn-screen.png)
+<p align="center">
+<img alt="Screenshot Plain" src="ui-predawn-screen-plain.png" width="70%">
+<img alt="Screenshot HTML" src="ui-predawn-screen-html.png" width="70%">
+</p>
 
 # Installing
 
@@ -32,3 +35,8 @@ It's quite straightforward to replace the orange accent color by another color o
 - Change the color of all orange icons in `style/images`. 
 
 That's it!
+
+# ToDo
+
+- [ ] Fine-tune for MacOS
+- [ ] Include calendar feature once it is released
