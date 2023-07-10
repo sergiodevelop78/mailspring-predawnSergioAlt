@@ -1,9 +1,9 @@
 {
-  "name": "Predawn",
-  "displayName": "Predawn",
+  "name": "predawnSergioAlt",
+  "displayName": "predawnSergioAlt",
   "theme": "ui",
   "version": "0.1.0",
-  "description": "The Mailspring Predawn UI Theme",
+  "description": "The Mailspring PredawnSergioAlt UI Theme",
   "license": "MIT",
   "engines": {
     "mailspring": "*"
